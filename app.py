@@ -1,16 +1,17 @@
-from flask import Flask , request , make_response
+from flask import Flask, request, make_response
 from slackclient import SlackClient 
 import json
 import os
 
 app = Flask(__name__)
 
-slack_token = os.environ['SLACK_API_TOKEN']
+slack_token = os.environ['SLACK_BOT_TOKEN']
 sc = SlackClient(slack_token)
-general_channel = "C93RP3CSG"
-introductions_channel = "CFQV2533L"
+general_channel = "CFUHX31N2"
+off_topic_channel = "CG27D3WMT"
+ub_attendance_channel = "CFT2CSU59"
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/',  methods=['GET',  'POST'])
 def check():
     if request.method == 'GET':
         return make_response("These are not the slackbots you're looking for.", 404)
